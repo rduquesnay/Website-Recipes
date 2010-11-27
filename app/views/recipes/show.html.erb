@@ -1,0 +1,18 @@
+<h1><%= @recipe.name %></h1>
+
+<p>Source: <%= @recipe.source %> </p>
+<p>Ingredients: <%= @recipe.ingredients %> </p>
+<p>Directions: <%= @recipe.directions %> </p>
+<p>Main Ingredient: <%= @recipe.main_ingredient %> </p>
+<p>Cuisine : <%= @recipe.cuisine %> </p>
+<p>Created : <%= @recipe.created_at %> </p>
+<p>Last Updated : <%= @recipe.updated_at %> </p>
+
+<p><%= @recipe.comments.size%> Comments:</p>
+<ul>
+<% @recipe.comments.each do |comment| %>
+  <li><%= comment.body %></li> 
+<% end %>
+</ul>
+
+<%= link_to "Add a comment", new_recipe_comments_path(@recipe) %>
