@@ -1,0 +1,8 @@
+<p><%= @recipe.comments.size%> Comments:</p>
+<ul>
+<% @recipe.comments.each do |comment| %>
+  <li><%= comment.body %></li> 
+<% end %>
+</ul>
+
+<%= link_to "Add a comment", new_recipe_comments_path(@recipe) %>

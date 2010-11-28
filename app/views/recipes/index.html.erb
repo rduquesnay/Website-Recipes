@@ -1,8 +1,14 @@
 <h1>Recipes</h1>
 
-<% @recipes.each do |recipe| %>
-  <%= link_to recipe.name, recipe_path(recipe) %></br>
-<% end %>
+<table>
+  <% @recipes.each do |recipe| %>
+    <tr>
+      <td><%= link_to recipe.name, recipe_path(recipe) %> </td>
+      <td><%= link_to "Edit", edit_recipe_path(recipe) %></td>
+      <td><%= button_to "Delete", recipe_path(recipe), :method => :delete %></td> 
+    </tr>
+  <% end %>
+</table>
 
 
 <%= link_to "Add a new recipe", new_recipe_path %>
